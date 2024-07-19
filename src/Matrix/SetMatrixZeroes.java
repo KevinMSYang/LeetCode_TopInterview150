@@ -10,39 +10,26 @@
 //				Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
 package Matrix;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class SetMatrixZeroes {
     public void setZeroes(int[][] matrix) {
     	int m = matrix.length;
     	int n = matrix[0].length;
-    	List<Integer> list = new ArrayList<>();
+    	int[] nextGen = new int[m*n];
+    	int index =0;
     	
     	for (int i = 0; i < m; i++) {
     		for (int j = 0; j < n; j++) {
     			if (matrix[i][j] == 0) {
-    				list = helper(i, j, m, n);
-    				System.out.println(list);
+    				helper(i, j, m, n, nextGen, index);
+    			}else {
+    				index++;
     			}
     		}
     	}
-        
     }
-    private List<Integer> helper (int i , int j, int m, int n) {
-    	List<Integer> list = new ArrayList<>();
-    	int r = i;
-    	int c = j;
+    private void helper (int i , int j, int m, int n, int[] arr, int index) {
     	
-    	for (i = 0; i < m; i++) {
-    		list.add(i);
-    		list.add(j);
-    	}
-    	for (j = 0; j < n; j++) {
-    		list.add(i);
-    		list.add(j);
-    	}
-    	return list;
     }
     
     public static void main(String[] args) {
