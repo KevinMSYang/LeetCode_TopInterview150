@@ -5,6 +5,12 @@ package BinaryTreeGeneral;
 
 public class SymmetricTree {
     public boolean isSymmetric(TreeNode root) {
-        
+        return helper(root, root);
+    }
+    private boolean helper (TreeNode l, TreeNode r) {
+    	if (l == null || r == null) {
+    		return l == r;
+    	}
+    	return l.val == r.val && helper(l.left, r.right) && helper(l.right, r.left);
     }
 }
