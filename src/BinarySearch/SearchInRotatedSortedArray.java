@@ -26,6 +26,61 @@ package BinarySearch;
 
 public class SearchInRotatedSortedArray {
 	public int search(int[] nums, int target) {
+		int l = 0;
+		int r = nums[nums.length-1];
 		
+		while (l <= r) {
+			int m = l + (r - l ) /2;
+			
+			if (nums[m] == target) {
+				return m;
+			}
+			
+			if (nums[l] <= nums[m]) {
+				if (nums[l] <= target && target < nums[m]) {
+					r = m -1;
+				}
+				else {
+					l = m +1;
+				}
+			}
+			else {
+				if (nums[m] < target && target <= nums[r]) {
+					l = m +1;
+				}
+				else {
+					r = m -1;
+				}
+			}
+		}
+		return -1;
 	}
+	
+//    public int search(int[] nums, int target) {
+//        int index = -1;
+//		int l = 0;
+//		int r = nums.length -1;
+//		
+//		while (l <= r)
+//		{
+//			if (nums[l] == target)
+//			{
+//				return l;
+//			}
+//			else if (nums[r] == target)
+//			{
+//				return r;
+//			}
+//			if (nums[l] < target)
+//			{
+//				l++;
+//			}
+//			else
+//			{
+//				r--;
+//			}
+//		}
+//		
+//		return index;
+//    }
 }
