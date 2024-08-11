@@ -29,6 +29,9 @@ public class FindTheIndexOfTheFirstOccurrenceInAString {
     	for (int i = 0; i < hayArr.length; i++) {
     		System.out.println("I= " +i );
     		int k = i;
+            if (hayArr.length - k < neeArr.length) {
+                break;
+            }
     		System.out.println("K= " +k);
     		for (int j = 0; j < neeArr.length&& k <hayArr.length; j++) {
     			System.out.println("J= " +j);

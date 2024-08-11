@@ -44,6 +44,7 @@ public class ValidParentheses {
         	else if (stack.isEmpty() || stack.pop() != c) {
         		return false;
         	}
+        	System.out.println(stack);
         }
         return stack.isEmpty();
     }
